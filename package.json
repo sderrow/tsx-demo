@@ -1,0 +1,34 @@
+{
+  "name": "swc-demo",
+  "packageManager": "yarn@4.5.3",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "author": "Sean Derrow",
+  "license": "ISC",
+  "scripts": {
+    "dev": "tsx watch --include \"./**/*.txt\" ./src/index.ts",
+    "start": "tsx ./src/index.ts",
+    "build": "esbuild --bundle --outfile=dist/index.js --platform=node --format=esm --sourcemap --packages=external ./src/index.ts",
+    "start:js": "yarn build --log-level=warning && node dist/index.js"
+  },
+  "scriptsComments": {
+    "build": "Not necessary to have this, but I wanted to see if I could get it to work",
+    "start:js": "Not necessary to have this, but I wanted to see if I could get it to work"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3",
+    "@types/node": "^22.10.1",
+    "esbuild": "^0.24.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "luxon": "^3.5.0"
+  },
+  "prettier": {
+    "printWidth": 100
+  }
+}
